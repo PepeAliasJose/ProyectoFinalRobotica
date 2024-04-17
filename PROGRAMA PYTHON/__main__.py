@@ -103,7 +103,7 @@ while True:
     if clase==1 and p>=0.65 and fb==0: #if para mandar una foto si detecta un brazo y parar la instalacion
         cv2.imwrite('/home/pepe/Desktop/proyecto/foto_brazo.jpg',image_rgb_np_with_detections)
         foto = open('/home/pepe/Desktop/proyecto/foto_brazo.jpg','rb')
-        tb.send_message(chatid,'Hay alguien tocando donde no debe cuando no debe UwU')
+        tb.send_message(chatid,'Hay alguien tocando donde no debe cuando no debe')
         tb.send_photo(chatid,foto)
         fb=1
         GPIO.output(12,1)
@@ -122,7 +122,7 @@ while True:
     if clase==2 and p>=0.55 and Y>120:
         GPIO.output(13,1)
         GPIO.output(23,0)
-        print("Ven a por la rueda bracito de fanuc")
+        print("Brazo FANUC va a por la rueda")
     if clase!=2 or p<=0.5:
         GPIO.output(13,0)
         GPIO.output(18,0)
